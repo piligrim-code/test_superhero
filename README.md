@@ -1,23 +1,41 @@
-# test_superhero
+📦 Установка и запуск
+Клонируйте репозиторий:
 
-Быстрый старт
-Склонируйте репозиторий:
+bash
+git clone https://github.com/your_username/test_superhero.git
+cd test_superhero
+Создайте файл конфигурации:
 
-git clone https://github.com/ваш-репозиторий/superhero-api.git \n
-cd superhero-api
+bash
+echo "SUPERHERO_API_TOKEN=your_api_token_here" > .env
+Запустите сервисы:
 
+bash
+docker-compose up --build -d
+После запуска API будет доступно по адресу:
+http://localhost:8000
 
+🚀 Использование API
+Добавление героя
+bash
+curl -X POST "http://localhost:8000/hero/?name=Spider-Man"
+Получение списка героев
+bash
+# Все герои
+curl "http://localhost:8000/hero/"
 
-Создайте файл .env в корне проекта:
-echo "SUPERHERO_API_TOKEN=ваш_токен" > .env
+# С фильтрацией
+curl "http://localhost:8000/hero/?intelligence=80,100&strength=50,"
+🧪 Тестирование
+bash
+docker-compose run web pytest -v
+📊 Мониторинг
+bash
+# Логи сервера
+docker-compose logs -f web
 
-
-Запустите проект:
-docker-compose up --build
-
-Запуск тестов
-docker-compose run web pytest
-
-Логирование
-docker-compose logs -f web  # Логи сервера
-docker-compose logs -f db   # Логи базы данных
+# Логи базы данных
+docker-compose logs -f db
+🛑 Остановка
+bash
+docker-compose down
