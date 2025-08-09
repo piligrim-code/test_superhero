@@ -3,8 +3,9 @@
 Быстрый старт
 Склонируйте репозиторий:
 
-git clone https://github.com/ваш-репозиторий/superhero-api.git
+git clone https://github.com/ваш-репозиторий/superhero-api.git \n
 cd superhero-api
+
 
 
 Создайте файл .env в корне проекта:
